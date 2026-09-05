@@ -3,9 +3,12 @@ import "../styles/global.css";
 
 const { lang = "en" } = Astro.props;
 const isSpanish = lang === "es";
-const isDetailPage =
-  Astro.url.pathname.includes("/research") ||
-  Astro.url.pathname.includes("/teaching");
+const currentPath = Astro.url.pathname;
+const languagePath = isSpanish
+  ? currentPath.replace(/^\/es(?=\/|$)/, "") || "/"
+  : currentPath === "/"
+    ? "/es/"
+    : `/es${currentPath}`;
 const labels = isSpanish
   ? {
       about: "Sobre mí",
@@ -42,8 +45,7 @@ const labels = isSpanish
   <body>
     <header
       class:list={[
-        "absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-4 px-5 py-6 sm:gap-8 sm:px-[5vw] lg:px-20",
-        isDetailPage && "text-paper",
+        "fixed inset-x-0 top-0 z-10 flex items-center justify-between gap-4 bg-paper/90 px-5 py-6 text-ink shadow-sm backdrop-blur-sm sm:gap-8 sm:px-[5vw] lg:px-20",
       ]}
     >
       <a class="font-bold tracking-[.04em] no-underline" href={labels.home}
@@ -69,7 +71,7 @@ const labels = isSpanish
       </nav>
       <a
         class="hidden border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:block"
-        href={isSpanish ? "/" : "/es/"}
+        href={languagePath}
         lang={isSpanish ? "en" : "es"}>{labels.switch}</a
       >
     </header>
