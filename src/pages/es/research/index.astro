@@ -2,7 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { researchData } from "../../../data/research";
 
-const { publications, projects } = researchData.es;
+const { page, publications, projects } = researchData.es;
 ---
 
 <Layout lang="es">
@@ -11,42 +11,37 @@ const { publications, projects } = researchData.es;
       class="min-h-[76vh] bg-ink px-5 pb-24 pt-48 text-paper sm:px-[8vw] lg:px-36"
     >
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Investigación
+        {page.label}
       </p><h1
         class="my-8 max-w-[10ch] text-[clamp(4rem,10vw,10rem)] leading-[.88] tracking-[-.05em]"
       >
-        Rastrear las vidas de los materiales, las personas y las ideas.
+        {page.title}
       </h1><p
         class="m-0 max-w-[26ch] font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight"
       >
-        Mi investigación examina cómo actores afrodescendientes, indígenas y
-        locales configuraron los mundos extractivos del Caribe temprano.
+        {page.intro}
       </p>
     </header>
     <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Marco actual
+        {page.frameLabel}
       </p><div class="mx-auto grid max-w-7xl gap-8 sm:gap-[8vw] md:grid-cols-2">
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Intercambio, resiliencia y equidad son historias conectadas.
+          {page.frameTitle}
         </h2><div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            Mi trabajo sigue el cobre, el azúcar y otras mercancías que
-            conectaron a las comunidades caribeñas con los mercados imperiales y
-            globales.
+            {page.frameParagraphs[0]}
           </p><p>
-            La historia ambiental me permite preguntar cómo las comunidades
-            respondieron a las presiones extractivas, mientras las voces
-            comunitarias abren preguntas sobre justicia, derechos y acceso.
+            {page.frameParagraphs[1]}
           </p>
         </div>
       </div>
     </section>
     <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Trabajo seleccionado
+        {page.selectedLabel}
       </p>
       <div class="mx-auto max-w-7xl">
         {
@@ -73,7 +68,7 @@ const { publications, projects } = researchData.es;
     </section>
     <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Trabajo en curso
+        {page.progressLabel}
       </p><div class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-3">
         {
           projects.map(([title, text]) => (
@@ -92,16 +87,14 @@ const { publications, projects } = researchData.es;
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          La investigación viaja a través de la colaboración.
+          {page.networksTitle}
         </h2><div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            Participo en TextDiveGlobal y en el Seminario Iberoamérica Global.
-            También soy miembro de LASA, ASEH, la Association of Caribbean
-            Historians y SOLCHA.
+            {page.networksText}
           </p><a
             class="mt-8 inline-flex gap-4 border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
-            href="/es/#contact"
-            >Iniciar una conversación <span aria-hidden="true">↗</span></a
+            href={page.contactLink}
+            >{page.contactLabel} <span aria-hidden="true">↗</span></a
           >
         </div>
       </div>

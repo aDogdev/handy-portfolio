@@ -2,7 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { teachingData } from "../../../data/teaching";
 
-const { courses, coursesLabel, materialsLabel } = teachingData.es;
+const { page, courses, coursesLabel, materialsLabel } = teachingData.es;
 ---
 
 <Layout lang="es">
@@ -11,16 +11,15 @@ const { courses, coursesLabel, materialsLabel } = teachingData.es;
       class="min-h-[76vh] bg-rust px-5 pb-24 pt-48 text-paper sm:px-[8vw] lg:px-36"
     >
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Docencia y pedagogía
+        {page.label}
       </p><h1
         class="my-8 max-w-[10ch] text-[clamp(4rem,10vw,10rem)] leading-[.88] tracking-[-.05em]"
       >
-        El aula como espacio de conexión.
+        {page.title}
       </h1><p
         class="m-0 max-w-[26ch] font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight"
       >
-        Conecto lengua, historia y participación comunitaria para que el
-        estudiantado lea el mundo con curiosidad y cuidado.
+        {page.intro}
       </p>
     </header>
     <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
@@ -28,18 +27,11 @@ const { courses, coursesLabel, materialsLabel } = teachingData.es;
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Aprender es una práctica activa e intercultural.
+          {page.frameTitle}
         </h2><div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            He enseñado español en distintos niveles, investigación en
-            humanidades y estudios latinoamericanos. Mi docencia enfatiza la
-            competencia intercultural, el pensamiento crítico y la participación
-            comunitaria.
-          </p><p>
-            El aprendizaje-servicio y la pedagogía pública conectan la
-            investigación del aula con preguntas más amplias de justicia,
-            sostenibilidad y pertenencia.
-          </p>
+            {page.frameParagraphs[0]}
+          </p><p>{page.frameParagraphs[1]}</p>
         </div>
       </div>
     </section>
@@ -81,11 +73,9 @@ const { courses, coursesLabel, materialsLabel } = teachingData.es;
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Enseñar mirando al mundo.
+          {page.closingTitle}
         </h2><p class="max-w-[55ch] text-[1.05rem] leading-7">
-          Los recursos educativos abiertos, el aprendizaje-servicio y la
-          investigación estudiantil crean rutas entre el conocimiento académico
-          y las comunidades que le dan sentido.
+          {page.closingText}
         </p>
       </div>
     </section>

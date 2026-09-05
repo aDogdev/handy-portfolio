@@ -1,8 +1,10 @@
 ---
 import "../styles/global.css";
+import { siteData } from "../data/site";
 
 const { lang = "en" } = Astro.props;
 const isSpanish = lang === "es";
+const siteContent = isSpanish ? siteData.es : siteData.en;
 const currentPath = Astro.url.pathname;
 const languagePath = isSpanish
   ? currentPath.replace(/^\/es(?=\/|$)/, "") || "/"
@@ -36,10 +38,7 @@ const labels = isSpanish
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Handy Acosta Cuellar, Ph.D. Historian, educator, and public scholar."
-    />
+    <meta name="description" content={siteContent.description} />
     <title>Handy Acosta Cuellar, Ph.D.</title>
   </head>
   <body>
@@ -80,7 +79,7 @@ const labels = isSpanish
       class="flex justify-between gap-4 px-5 py-6 text-[.75rem] uppercase tracking-[.08em] sm:px-[5vw] lg:px-20"
     >
       <span>Handy Acosta Cuellar, Ph.D.</span>
-      <a class="no-underline" href="#top">Back to top ↑</a>
+      <a class="no-underline" href="#top">{siteContent.backToTop}</a>
     </footer>
   </body>
 </html>

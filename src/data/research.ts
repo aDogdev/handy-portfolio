@@ -1,5 +1,25 @@
 export const researchData = {
   en: {
+    page: {
+      label: "Research",
+      title: "Tracing the lives of materials, people, and ideas.",
+      intro:
+        "My research examines how Afrodescendant, Indigenous, and local actors shaped extractive worlds across the early Caribbean.",
+      frameLabel: "Current frame",
+      frameTitle: "Exchange, resilience, and equity are connected histories.",
+      frameParagraphs: [
+        "My work follows copper, sugar, and other commodities as they linked Caribbean communities to imperial and global markets. I trace not only flows of metals and goods, but also the circulation of technologies, beliefs, and survival strategies.",
+        "Environmental history helps me ask how communities responded to extractive pressure, while archival silences and community voices open questions about justice, rights, and access.",
+      ],
+      selectedLabel: "Selected work",
+      progressLabel: "In progress",
+      networksLabel: "Networks & service",
+      networksTitle: "Research travels through collaboration.",
+      networksText:
+        "Member of TextDiveGlobal and Seminario Iberoamérica Global. Professional memberships include IUCN's Commission on Education and Communication, LASA, ASEH, the Association of Caribbean Historians, and SOLCHA.",
+      contactLabel: "Start a conversation",
+      contactLink: "/#contact",
+    },
     publications: [
       {
         type: "Dissertation",
@@ -38,6 +58,27 @@ export const researchData = {
     ],
   },
   es: {
+    page: {
+      label: "Investigación",
+      title: "Rastrear las vidas de los materiales, las personas y las ideas.",
+      intro:
+        "Mi investigación examina cómo actores afrodescendientes, indígenas y locales configuraron los mundos extractivos del Caribe temprano.",
+      frameLabel: "Marco actual",
+      frameTitle:
+        "Intercambio, resiliencia y equidad son historias conectadas.",
+      frameParagraphs: [
+        "Mi trabajo sigue el cobre, el azúcar y otras mercancías que conectaron a las comunidades caribeñas con los mercados imperiales y globales.",
+        "La historia ambiental me permite preguntar cómo las comunidades respondieron a las presiones extractivas, mientras las voces comunitarias abren preguntas sobre justicia, derechos y acceso.",
+      ],
+      selectedLabel: "Trabajo seleccionado",
+      progressLabel: "Trabajo en curso",
+      networksLabel: "Redes y servicio",
+      networksTitle: "La investigación viaja a través de la colaboración.",
+      networksText:
+        "Participo en TextDiveGlobal y en el Seminario Iberoamérica Global. También soy miembro de LASA, ASEH, la Association of Caribbean Historians y SOLCHA.",
+      contactLabel: "Iniciar una conversación",
+      contactLink: "/es/#contact",
+    },
     publications: [
       {
         type: "Disertación doctoral",

@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { researchData } from "../../data/research";
 
-const { publications, projects } = researchData.en;
+const { page, publications, projects } = researchData.en;
 ---
 
 <Layout>
@@ -11,42 +11,36 @@ const { publications, projects } = researchData.en;
       class="min-h-[76vh] bg-ink px-5 pb-24 pt-48 text-paper sm:px-[8vw] lg:px-36"
     >
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Research
+        {page.label}
       </p>
       <h1
         class="my-8 max-w-[10ch] text-[clamp(4rem,10vw,10rem)] leading-[.88] tracking-[-.05em]"
       >
-        Tracing the lives of materials, people, and ideas.
+        {page.title}
       </h1>
       <p
         class="m-0 max-w-[26ch] font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight"
       >
-        My research examines how Afrodescendant, Indigenous, and local actors
-        shaped extractive worlds across the early Caribbean.
+        {page.intro}
       </p>
     </header>
 
     <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Current frame
+        {page.frameLabel}
       </p>
       <div class="mx-auto grid max-w-7xl gap-8 sm:gap-[8vw] md:grid-cols-2">
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Exchange, resilience, and equity are connected histories.
+          {page.frameTitle}
         </h2>
         <div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            My work follows copper, sugar, and other commodities as they linked
-            Caribbean communities to imperial and global markets. I trace not
-            only flows of metals and goods, but also the circulation of
-            technologies, beliefs, and survival strategies.
+            {page.frameParagraphs[0]}
           </p>
           <p>
-            Environmental history helps me ask how communities responded to
-            extractive pressure, while archival silences and community voices
-            open questions about justice, rights, and access.
+            {page.frameParagraphs[1]}
           </p>
         </div>
       </div>
@@ -54,7 +48,7 @@ const { publications, projects } = researchData.en;
 
     <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Selected work
+        {page.selectedLabel}
       </p>
       <div class="mx-auto max-w-7xl">
         {
@@ -82,7 +76,7 @@ const { publications, projects } = researchData.en;
 
     <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        In progress
+        {page.progressLabel}
       </p>
       <div class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-3">
         {
@@ -100,25 +94,22 @@ const { publications, projects } = researchData.en;
 
     <section class="bg-ink px-5 py-20 text-paper sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Networks & service
+        {page.networksLabel}
       </p>
       <div class="mx-auto grid max-w-7xl gap-8 sm:gap-[8vw] md:grid-cols-2">
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Research travels through collaboration.
+          {page.networksTitle}
         </h2>
         <div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            Member of TextDiveGlobal and Seminario Iberoamérica Global.
-            Professional memberships include IUCN's Commission on Education and
-            Communication, LASA, ASEH, the Association of Caribbean Historians,
-            and SOLCHA.
+            {page.networksText}
           </p>
           <a
             class="mt-8 inline-flex gap-4 border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
-            href="/#contact"
-            >Start a conversation <span aria-hidden="true">↗</span></a
+            href={page.contactLink}
+            >{page.contactLabel} <span aria-hidden="true">↗</span></a
           >
         </div>
       </div>

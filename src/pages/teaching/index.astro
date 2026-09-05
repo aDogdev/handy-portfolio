@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { teachingData } from "../../data/teaching";
 
-const { courses, coursesLabel, materialsLabel } = teachingData.en;
+const { page, courses, coursesLabel, materialsLabel } = teachingData.en;
 ---
 
 <Layout>
@@ -11,18 +11,17 @@ const { courses, coursesLabel, materialsLabel } = teachingData.en;
       class="min-h-[76vh] bg-rust px-5 pb-24 pt-48 text-paper sm:px-[8vw] lg:px-36"
     >
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Teaching & pedagogy
+        {page.label}
       </p>
       <h1
         class="my-8 max-w-[10ch] text-[clamp(4rem,10vw,10rem)] leading-[.88] tracking-[-.05em]"
       >
-        The classroom as a place for connection.
+        {page.title}
       </h1>
       <p
         class="m-0 max-w-[26ch] font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight"
       >
-        I connect language, history, and community engagement to help students
-        read the world with curiosity and care.
+        {page.intro}
       </p>
     </header>
 
@@ -31,20 +30,12 @@ const { courses, coursesLabel, materialsLabel } = teachingData.en;
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Learning is an active, intercultural practice.
+          {page.frameTitle}
         </h2>
         <div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
-            I have taught different levels of Spanish language, Research in the
-            Humanities, and Latin American Studies. My teaching emphasizes
-            intercultural competence, critical thinking, and community
-            engagement.
-          </p>
-          <p>
-            Service-learning and public-facing pedagogy connect classroom
-            inquiry to broader questions of justice, sustainability, and
-            belonging.
-          </p>
+            {page.frameParagraphs[0]}
+          </p><p>{page.frameParagraphs[1]}</p>
         </div>
       </div>
     </section>
@@ -89,12 +80,10 @@ const { courses, coursesLabel, materialsLabel } = teachingData.en;
         <h2
           class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
         >
-          Teaching with the wider world in view.
+          {page.closingTitle}
         </h2>
         <p class="max-w-[55ch] text-[1.05rem] leading-7">
-          Open educational resources, service-learning, and student research
-          create routes between academic knowledge and the communities that give
-          it meaning.
+          {page.closingText}
         </p>
       </div>
     </section>

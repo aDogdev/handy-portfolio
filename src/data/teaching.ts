@@ -1,5 +1,19 @@
 export const teachingData = {
   en: {
+    page: {
+      label: "Teaching & pedagogy",
+      title: "The classroom as a place for connection.",
+      intro:
+        "I connect language, history, and community engagement to help students read the world with curiosity and care.",
+      frameTitle: "Learning is an active, intercultural practice.",
+      frameParagraphs: [
+        "I have taught different levels of Spanish language, Research in the Humanities, and Latin American Studies. My teaching emphasizes intercultural competence, critical thinking, and community engagement.",
+        "Service-learning and public-facing pedagogy connect classroom inquiry to broader questions of justice, sustainability, and belonging.",
+      ],
+      closingTitle: "Teaching with the wider world in view.",
+      closingText:
+        "Open educational resources, service-learning, and student research create routes between academic knowledge and the communities that give it meaning.",
+    },
     coursesLabel: "Courses taught",
     materialsLabel: "Materials",
     courses: [
@@ -42,6 +56,20 @@ export const teachingData = {
     ],
   },
   es: {
+    page: {
+      label: "Docencia y pedagogía",
+      title: "El aula como espacio de conexión.",
+      intro:
+        "Conecto lengua, historia y participación comunitaria para que el estudiantado lea el mundo con curiosidad y cuidado.",
+      frameTitle: "Aprender es una práctica activa e intercultural.",
+      frameParagraphs: [
+        "He enseñado español en distintos niveles, investigación en humanidades y estudios latinoamericanos. Mi docencia enfatiza la competencia intercultural, el pensamiento crítico y la participación comunitaria.",
+        "El aprendizaje-servicio y la pedagogía pública conectan la investigación del aula con preguntas más amplias de justicia, sostenibilidad y pertenencia.",
+      ],
+      closingTitle: "Enseñar mirando al mundo.",
+      closingText:
+        "Los recursos educativos abiertos, el aprendizaje-servicio y la investigación estudiantil crean rutas entre el conocimiento académico y las comunidades que le dan sentido.",
+    },
     coursesLabel: "Cursos impartidos",
     materialsLabel: "Materiales",
     courses: [

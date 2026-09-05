@@ -5,14 +5,17 @@ import Contact from "../components/Sections/Contact.astro";
 import Hero from "../components/Sections/Hero.astro";
 import ResearchThemes from "../components/Sections/ResearchThemes.astro";
 import TeachingPedagogy from "../components/Sections/TeachingPedagogy.astro";
+import { homeData } from "../data/home";
+
+const content = homeData.en;
 ---
 
-<Layout>
+<Layout lang="en">
   <main>
-    <Hero />
-    <About />
-    <ResearchThemes />
-    <TeachingPedagogy />
-    <Contact />
+    <Hero content={content.hero} />
+    <About content={content.about} />
+    <ResearchThemes content={content.researchThemes} />
+    <TeachingPedagogy content={content.teachingPedagogy} />
+    <Contact content={content.contact} />
   </main>
 </Layout>

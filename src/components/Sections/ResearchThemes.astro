@@ -1,53 +1,39 @@
 ---
 import Section from "../Section.astro";
 
-const themes = [
-  {
-    number: "01",
-    title: "Exchange",
-    text: "How goods, technologies, and ideas circulated across the Atlantic and Caribbean, reshaping local lives and global empires.",
-  },
-  {
-    number: "02",
-    title: "Resilience",
-    text: "How Afrodescendant, Indigenous, and local communities adapted and created new forms of survival under extractive regimes.",
-  },
-  {
-    number: "03",
-    title: "Equity",
-    text: "What struggles for justice, access, and recognition emerge when unequal societies contest land, water, and knowledge systems.",
-  },
-];
+const { content } = Astro.props;
 ---
 
 <Section
   id="research"
-  eyebrow="03 / Research themes"
-  title="Exchange, resilience, equity."
+  eyebrow={content.eyebrow}
+  title={content.title}
   tone="ink"
 >
   <p
     class="mb-16 mt-[-1.5rem] max-w-[27ch] font-display text-[clamp(1.4rem,2.5vw,2rem)]"
   >
-    My work explores the relationships between extraction, community, and change
-    in Latin America's history.
+    {content.intro}
   </p>
   <div class="mb-16 grid grid-cols-1 border-t border-paper/35 md:grid-cols-3">
     {
-      themes.map((theme) => (
-        <article class="min-h-0 border-b border-paper/35 py-6 md:min-h-80 md:border-b-0 md:border-r md:pr-8 md:[&:nth-child(2)]:pl-8 md:[&:nth-child(3)]:border-r-0 md:[&:nth-child(3)]:pl-8">
-          <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-            {theme.number}
-          </p>
-          <h3 class="mb-6 mt-8 text-[clamp(2.5rem,5vw,5rem)]">{theme.title}</h3>
-          <p class="max-w-[30ch] leading-relaxed">{theme.text}</p>
-        </article>
-      ))
+      content.themes.map(
+        (theme: { number: string; title: string; text: string }) => (
+          <article class="min-h-0 border-b border-paper/35 py-6 md:min-h-80 md:border-b-0 md:border-r md:pr-8 md:[&:nth-child(2)]:pl-8 md:[&:nth-child(3)]:border-r-0 md:[&:nth-child(3)]:pl-8">
+            <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+              {theme.number}
+            </p>
+            <h3 class="mb-6 mt-8 text-[clamp(2.5rem,5vw,5rem)]">
+              {theme.title}
+            </h3>
+            <p class="max-w-[30ch] leading-relaxed">{theme.text}</p>
+          </article>
+        ),
+      )
     }
   </div>
   <a
     class="inline-flex gap-4 border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
-    href="/research/"
-    >View research and publications <span aria-hidden="true">↗</span></a
+    href={content.link}>{content.linkLabel} <span aria-hidden="true">↗</span></a
   >
 </Section>
