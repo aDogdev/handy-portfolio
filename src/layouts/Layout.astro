@@ -3,6 +3,9 @@ import "../styles/global.css";
 
 const { lang = "en" } = Astro.props;
 const isSpanish = lang === "es";
+const isDetailPage =
+  Astro.url.pathname.includes("/research") ||
+  Astro.url.pathname.includes("/teaching");
 const labels = isSpanish
   ? {
       about: "Sobre mí",
@@ -38,10 +41,13 @@ const labels = isSpanish
   </head>
   <body>
     <header
-      class="absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-4 px-5 py-6 sm:gap-8 sm:px-[5vw] lg:px-20"
+      class:list={[
+        "absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-4 px-5 py-6 sm:gap-8 sm:px-[5vw] lg:px-20",
+        isDetailPage && "text-paper",
+      ]}
     >
       <a class="font-bold tracking-[.04em] no-underline" href={labels.home}
-        >HAC<span class="text-coral">.</span></a
+        >HAC.</a
       >
       <nav class="flex gap-3 sm:gap-8 lg:gap-10" aria-label="Main navigation">
         <a

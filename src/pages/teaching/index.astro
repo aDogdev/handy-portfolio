@@ -1,44 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { teachingData } from "../../data/teaching";
 
-const courses = [
-  [
-    "Spanish 1010, 2030",
-    "Introductory and Intermediate Spanish",
-    "Tulane University",
-    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/spring_2025.pdf",
-  ],
-  [
-    "Spanish 1101, 1102, 2101, 2202",
-    "Introductory and Intermediate Spanish",
-    "Louisiana State University",
-    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/fall-2020-report-for-span-2101-section-003-intermed-spanish-handy-acosta-cuellar_57fc8480-10dc-4d3b-89d5-b87cf99c4f46en-us.pdf",
-  ],
-  [
-    "HSS 1000",
-    "Introduction to Research in the Humanities",
-    "Louisiana State University",
-    "",
-  ],
-  [
-    "SPAN 3070",
-    "Spanish for the Professions with Service-Learning",
-    "Louisiana State University",
-    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/span3070_syllabus_spring2021-acosta-sl.doc",
-  ],
-  [
-    "LAST 1020",
-    "Introduction to Latin American Studies with Service-Learning",
-    "Tulane University",
-    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/syllabus-intro-to-latin-american-studies-1020-spring-2018.docx",
-  ],
-  [
-    "LAST 1010",
-    "Introduction to Latin American Studies",
-    "Tulane University",
-    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/fall2017syllabus-acosta.docx",
-  ],
-];
+const { courses, coursesLabel, materialsLabel } = teachingData.en;
 ---
 
 <Layout>
@@ -87,11 +51,11 @@ const courses = [
 
     <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Courses taught
+        {coursesLabel}
       </p>
       <div class="mx-auto max-w-7xl">
         {
-          courses.map(([code, name, institution, href]) => (
+          courses.map(({ code, name, institution, href }) => (
             <article class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8">
               <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
                 {code}
@@ -109,7 +73,7 @@ const courses = [
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Materials <span aria-hidden="true">↗</span>
+                  {materialsLabel} <span aria-hidden="true">↗</span>
                 </a>
               )}
             </article>

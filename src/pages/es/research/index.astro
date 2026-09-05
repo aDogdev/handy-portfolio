@@ -1,5 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { researchData } from "../../../data/research";
+
+const { publications, projects } = researchData.es;
 ---
 
 <Layout lang="es">
@@ -43,41 +46,45 @@ import Layout from "../../../layouts/Layout.astro";
     </section>
     <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+        Trabajo seleccionado
+      </p>
+      <div class="mx-auto max-w-7xl">
+        {
+          publications.map((publication) => (
+            <article class="border-t border-ink/20 py-8">
+              <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
+                {publication.type}
+              </p>
+              <h2 class="my-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none">
+                <a
+                  class="no-underline hover:text-coral"
+                  href={publication.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {publication.title} <span aria-hidden="true">↗</span>
+                </a>
+              </h2>
+              <p class="m-0 leading-relaxed">{publication.detail}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
+      <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
         Trabajo en curso
       </p><div class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-3">
-        <article class="border-t border-ink/20 py-6 pr-8">
-          <h2
-            class="my-2 max-w-[28ch] text-[clamp(1.6rem,2.5vw,2.5rem)] leading-none"
-          >
-            El horno y el bosque
-          </h2><p class="m-0 leading-relaxed">
-            Metalurgia afrodescendiente, resiliencia y cambio ambiental en la
-            Cuba colonial.
-          </p>
-        </article><article
-          class="border-t border-ink/20 py-6 pr-8 md:border-l md:pl-8"
-        >
-          <h2
-            class="my-2 max-w-[28ch] text-[clamp(1.6rem,2.5vw,2.5rem)] leading-none"
-          >
-            ¿Campos de batalla espirituales?
-          </h2><p class="m-0 leading-relaxed">
-            Ritual afrocaribeño y devoción mariana en las minas de cobre de
-            Cuba.
-          </p>
-        </article><article
-          class="border-t border-ink/20 py-6 pr-8 md:border-l md:pl-8"
-        >
-          <h2
-            class="my-2 max-w-[28ch] text-[clamp(1.6rem,2.5vw,2.5rem)] leading-none"
-          >
-            Historia pública
-          </h2><p class="m-0 leading-relaxed">
-            Proyectos colaborativos que hacen accesible el conocimiento
-            histórico mediante la participación comunitaria y las plataformas
-            digitales.
-          </p>
-        </article>
+        {
+          projects.map(([title, text]) => (
+            <article class="border-t border-ink/20 py-6 pr-8 md:[&:not(:first-child)]:border-l md:[&:not(:first-child)]:pl-8">
+              <h2 class="my-2 max-w-[28ch] text-[clamp(1.6rem,2.5vw,2.5rem)] leading-none">
+                {title}
+              </h2>
+              <p class="m-0 leading-relaxed">{text}</p>
+            </article>
+          ))
+        }
       </div>
     </section>
     <section class="bg-ink px-5 py-20 text-paper sm:px-[8vw] sm:py-36 lg:px-36">

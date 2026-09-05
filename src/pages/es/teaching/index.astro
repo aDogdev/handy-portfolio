@@ -1,5 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { teachingData } from "../../../data/teaching";
+
+const { courses, coursesLabel, materialsLabel } = teachingData.es;
 ---
 
 <Layout lang="es">
@@ -42,47 +45,33 @@ import Layout from "../../../layouts/Layout.astro";
     </section>
     <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
       <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
-        Cursos impartidos
+        {coursesLabel}
       </p><div class="mx-auto max-w-7xl">
-        <article
-          class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8"
-        >
-          <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
-            Español
-          </p><div>
-            <h2
-              class="m-0 mb-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none"
-            >
-              Español introductorio e intermedio
-            </h2><p class="m-0 leading-relaxed">
-              Tulane University y Louisiana State University
-            </p>
-          </div>
-        </article><article
-          class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8"
-        >
-          <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
-            Humanidades
-          </p><div>
-            <h2
-              class="m-0 mb-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none"
-            >
-              Introducción a la investigación en humanidades
-            </h2><p class="m-0 leading-relaxed">Louisiana State University</p>
-          </div>
-        </article><article
-          class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8"
-        >
-          <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
-            Estudios latinoamericanos
-          </p><div>
-            <h2
-              class="m-0 mb-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none"
-            >
-              Introducción a los estudios latinoamericanos
-            </h2><p class="m-0 leading-relaxed">Tulane University</p>
-          </div>
-        </article>
+        {
+          courses.map(({ code, name, institution, href }) => (
+            <article class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8">
+              <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
+                {code}
+              </p>
+              <div>
+                <h2 class="m-0 mb-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none">
+                  {name}
+                </h2>
+                <p class="m-0 leading-relaxed">{institution}</p>
+              </div>
+              {href && (
+                <a
+                  class="inline-flex w-fit gap-4 whitespace-nowrap border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {materialsLabel} <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </article>
+          ))
+        }
       </div>
     </section>
     <section
