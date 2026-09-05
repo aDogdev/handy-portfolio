@@ -1,0 +1,157 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+
+const themes = [
+  [
+    "01",
+    "Intercambio",
+    "Cómo circularon bienes, tecnologías e ideas por el Atlántico y el Caribe, transformando vidas locales e imperios globales.",
+  ],
+  [
+    "02",
+    "Resiliencia",
+    "Cómo las comunidades afrodescendientes, indígenas y locales se adaptaron y crearon formas de supervivencia frente a regímenes extractivos.",
+  ],
+  [
+    "03",
+    "Equidad",
+    "Qué luchas por la justicia, el acceso y el reconocimiento surgen cuando sociedades desiguales disputan la tierra, el agua y los sistemas de conocimiento.",
+  ],
+];
+---
+
+<Layout lang="es">
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <p class="hero-index">01 / 05</p>
+        <div class="hero-copy">
+          <p class="eyebrow">Historiador · Educador · Investigador público</p>
+          <h1>Handy Acosta<br /><em>Cuellar, Ph.D.</em></h1>
+          <p class="hero-intro">
+            En la intersección de las culturas, el medioambiente y los sistemas
+            de conocimiento.
+          </p>
+          <a class="text-link" href="#about"
+            >Conocer el trabajo <span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <p class="hero-note">
+          América Latina<br />Historia del Caribe<br />Humanidades ambientales
+        </p>
+      </div>
+    </section>
+
+    <Section
+      id="about"
+      eyebrow="02 / Sobre mí"
+      title="La historia es un diálogo vivo."
+      tone="cream"
+    >
+      <div class="about-grid">
+        <div>
+          <p class="lead">
+            Soy educador e investigador. Exploro cómo las culturas, los entornos
+            y los sistemas de conocimiento se han moldeado mutuamente en las
+            Américas.
+          </p>
+        </div>
+        <div class="about-body">
+          <p>
+            Mi trabajo se sitúa en el cruce entre la historia, la ecología y la
+            participación comunitaria, y muestra cómo actores afrodescendientes,
+            indígenas y locales navegaron y transformaron mundos coloniales
+            extractivos.
+          </p>
+          <p>
+            Mi próximo libro, <em
+              >Copper Legacies: Environment, Labor, and Empire in Cuba under the
+              Spanish Habsburgs</em
+            >, estudia la relación entre la metalurgia, la esclavitud y el
+            cambio ambiental en el Caribe del siglo XVII.
+          </p>
+          <p>
+            Como docente, conecto la investigación con la práctica mediante el
+            aprendizaje-servicio y una pedagogía abierta al público.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="research"
+      eyebrow="03 / Temas de investigación"
+      title="Intercambio, resiliencia, equidad."
+      tone="ink"
+    >
+      <p class="section-deck">
+        Mi trabajo explora las relaciones entre extracción, comunidad y cambio
+        en la historia de América Latina.
+      </p>
+      <div class="theme-grid">
+        {
+          themes.map(([number, title, text]) => (
+            <article class="theme-card">
+              <>
+                <p class="card-number">{number}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+      <a class="text-link" href="/es/research/"
+        >Ver investigación y publicaciones <span aria-hidden="true">↗</span></a
+      >
+    </Section>
+
+    <Section
+      id="teaching"
+      eyebrow="04 / Docencia y pedagogía"
+      title="Aprender como investigación compartida."
+      tone="rust"
+    >
+      <div class="teaching-grid">
+        <p class="lead">
+          Enseño español, investigación en humanidades y estudios
+          latinoamericanos.
+        </p>
+        <div>
+          <p>
+            Mi enseñanza enfatiza la competencia intercultural, el pensamiento
+            crítico y la participación comunitaria. Conecto el aula con
+            preguntas sociales más amplias y con la historia entendida como un
+            diálogo vivo.
+          </p><a class="text-link" href="/es/teaching/"
+            >Explorar docencia y cursos <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="contact"
+      eyebrow="05 / Contacto"
+      title="Continuemos la conversación."
+      tone="cream"
+    >
+      <div class="contact-grid">
+        <div>
+          <p class="lead">
+            Para conversar sobre investigación, docencia o colaboración,
+            escríbeme.
+          </p><a
+            class="email-link"
+            href="mailto:handy.acosta.cuellar@tulane.edu"
+            >handy.acosta.cuellar@tulane.edu</a
+          >
+        </div><address>
+          Handy Acosta Cuellar<br />Newcomb Hall 302<br />School of Liberal Arts<br
+          />Tulane University<br />New Orleans, LA 70118
+        </address>
+      </div>
+    </Section>
+  </main>
+</Layout>

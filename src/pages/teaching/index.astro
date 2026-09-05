@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const courses = [
+  [
+    "Spanish 1010, 2030",
+    "Introductory and Intermediate Spanish",
+    "Tulane University",
+    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/spring_2025.pdf",
+  ],
+  [
+    "Spanish 1101, 1102, 2101, 2202",
+    "Introductory and Intermediate Spanish",
+    "Louisiana State University",
+    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/fall-2020-report-for-span-2101-section-003-intermed-spanish-handy-acosta-cuellar_57fc8480-10dc-4d3b-89d5-b87cf99c4f46en-us.pdf",
+  ],
+  [
+    "HSS 1000",
+    "Introduction to Research in the Humanities",
+    "Louisiana State University",
+    "",
+  ],
+  [
+    "SPAN 3070",
+    "Spanish for the Professions with Service-Learning",
+    "Louisiana State University",
+    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/span3070_syllabus_spring2021-acosta-sl.doc",
+  ],
+  [
+    "LAST 1020",
+    "Introduction to Latin American Studies with Service-Learning",
+    "Tulane University",
+    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/syllabus-intro-to-latin-american-studies-1020-spring-2018.docx",
+  ],
+  [
+    "LAST 1010",
+    "Introduction to Latin American Studies",
+    "Tulane University",
+    "https://handyacosta.wordpress.com/wp-content/uploads/2025/10/fall2017syllabus-acosta.docx",
+  ],
+];
+---
+
+<Layout>
+  <main class="detail-page">
+    <header class="detail-hero detail-hero--rust">
+      <p class="eyebrow">Teaching & pedagogy</p>
+      <h1>The classroom as a place for connection.</h1>
+      <p class="detail-intro">
+        I connect language, history, and community engagement to help students
+        read the world with curiosity and care.
+      </p>
+    </header>
+
+    <section class="detail-section">
+      <div class="detail-columns">
+        <h2>Learning is an active, intercultural practice.</h2>
+        <div>
+          <p>
+            I have taught different levels of Spanish language, Research in the
+            Humanities, and Latin American Studies. My teaching emphasizes
+            intercultural competence, critical thinking, and community
+            engagement.
+          </p>
+          <p>
+            Service-learning and public-facing pedagogy connect classroom
+            inquiry to broader questions of justice, sustainability, and
+            belonging.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section detail-section--cream">
+      <p class="eyebrow">Courses taught</p>
+      <div class="course-list">
+        {
+          courses.map(([code, name, institution, href]) => (
+            <article class="course">
+              <p class="publication-type">{code}</p>
+              <div>
+                <h2>{name}</h2>
+                <p>{institution}</p>
+              </div>
+              {href && (
+                <a
+                  class="text-link"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Materials <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="detail-section detail-section--rust">
+      <div class="detail-columns">
+        <h2>Teaching with the wider world in view.</h2>
+        <p>
+          Open educational resources, service-learning, and student research
+          create routes between academic knowledge and the communities that give
+          it meaning.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

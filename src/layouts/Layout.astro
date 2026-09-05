@@ -1,23 +1,60 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { lang = "en" } = Astro.props;
+const isSpanish = lang === "es";
+const labels = isSpanish
+  ? {
+      about: "Sobre mí",
+      research: "Investigación",
+      teaching: "Docencia",
+      contact: "Contacto",
+      switch: "EN",
+      home: "/es/",
+    }
+  : {
+      about: "About",
+      research: "Research",
+      teaching: "Teaching",
+      contact: "Contact",
+      switch: "ES",
+      home: "/",
+    };
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Handy Acosta Cuellar, Ph.D. Historian, educator, and public scholar."
+    />
+    <title>Handy Acosta Cuellar, Ph.D.</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href={labels.home}>HAC<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href={`${labels.home}#about`}>{labels.about}</a>
+        <a href={`${labels.home}#research`}>{labels.research}</a>
+        <a href={`${labels.home}#teaching`}>{labels.teaching}</a>
+        <a href={`${labels.home}#contact`}>{labels.contact}</a>
+      </nav>
+      <a
+        class="language-switch"
+        href={isSpanish ? "/" : "/es/"}
+        lang={isSpanish ? "en" : "es"}>{labels.switch}</a
+      >
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <span>Handy Acosta Cuellar, Ph.D.</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const publications = [
+  {
+    type: "Dissertation",
+    title:
+      "Copper Legacies: Environment, Labor, and Empire in Eastern Cuba under the Spanish Habsburgs",
+    detail: "PhD Dissertation, Tulane University, 2025",
+    href: "https://www.proquest.com/docview/3251321135",
+  },
+  {
+    type: "Peer-reviewed article",
+    title:
+      "Manteniendo la fragua encendida: esclavizados africanos y tecnología de fundición de cobre en Cuba (1540-1767)",
+    detail: "Perspectivas afro 1, no. 2 (2022): 128-148",
+    href: "https://works.hcommons.org/records/az2ay-tww72",
+  },
+  {
+    type: "Educational resource",
+    title: "Libro Libre: An Introduction to Spanish I and II",
+    detail: "Pressbooks, 2022. Open Educational Resource.",
+    href: "https://louis.pressbooks.pub/elementaryspanish1and2/",
+  },
+];
+
+const projects = [
+  [
+    "The Furnace and the Forest",
+    "Afrodescendant metallurgy, resilience, and environmental change in colonial Cuba. Article in preparation for Technology and Culture (2026).",
+  ],
+  [
+    "Spiritual Battlegrounds?",
+    "Afro-Caribbean ritual and Marian devotion in the copper mines of Cuba. In preparation for Afro-Hispanic Review (2026).",
+  ],
+  [
+    "Public history",
+    "Collaborative projects that make archival and historical knowledge accessible through community engagement, bilingual practice, and digital platforms.",
+  ],
+];
+---
+
+<Layout>
+  <main class="detail-page">
+    <header class="detail-hero">
+      <p class="eyebrow">Research</p>
+      <h1>Tracing the lives of materials, people, and ideas.</h1>
+      <p class="detail-intro">
+        My research examines how Afrodescendant, Indigenous, and local actors
+        shaped extractive worlds across the early Caribbean.
+      </p>
+    </header>
+
+    <section class="detail-section">
+      <p class="eyebrow">Current frame</p>
+      <div class="detail-columns">
+        <h2>Exchange, resilience, and equity are connected histories.</h2>
+        <div>
+          <p>
+            My work follows copper, sugar, and other commodities as they linked
+            Caribbean communities to imperial and global markets. I trace not
+            only flows of metals and goods, but also the circulation of
+            technologies, beliefs, and survival strategies.
+          </p>
+          <p>
+            Environmental history helps me ask how communities responded to
+            extractive pressure, while archival silences and community voices
+            open questions about justice, rights, and access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section detail-section--cream">
+      <p class="eyebrow">Selected work</p>
+      <div class="publication-list">
+        {
+          publications.map((publication) => (
+            <article class="publication">
+              <p class="publication-type">{publication.type}</p>
+              <h2>
+                <a href={publication.href} target="_blank" rel="noreferrer">
+                  {publication.title} <span aria-hidden="true">↗</span>
+                </a>
+              </h2>
+              <p>{publication.detail}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <p class="eyebrow">In progress</p>
+      <div class="project-list">
+        {
+          projects.map(([title, text]) => (
+            <article class="project">
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="detail-section detail-section--ink">
+      <p class="eyebrow">Networks & service</p>
+      <div class="detail-columns">
+        <h2>Research travels through collaboration.</h2>
+        <div>
+          <p>
+            Member of TextDiveGlobal and Seminario Iberoamérica Global.
+            Professional memberships include IUCN's Commission on Education and
+            Communication, LASA, ASEH, the Association of Caribbean Historians,
+            and SOLCHA.
+          </p>
+          <a class="text-link" href="/#contact"
+            >Start a conversation <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

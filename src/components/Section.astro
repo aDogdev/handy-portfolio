@@ -1,0 +1,11 @@
+---
+const { eyebrow, title, id = undefined, tone = "light" } = Astro.props;
+---
+
+<section class:list={["site-section", `site-section--${tone}`]} id={id}>
+  <div class="section-inner">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    {title && <h2>{title}</h2>}
+    <slot />
+  </div>
+</section>

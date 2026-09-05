@@ -1,0 +1,47 @@
+---
+import Section from "../Section.astro";
+
+const themes = [
+  {
+    number: "01",
+    title: "Exchange",
+    text: "How goods, technologies, and ideas circulated across the Atlantic and Caribbean, reshaping local lives and global empires.",
+  },
+  {
+    number: "02",
+    title: "Resilience",
+    text: "How Afrodescendant, Indigenous, and local communities adapted and created new forms of survival under extractive regimes.",
+  },
+  {
+    number: "03",
+    title: "Equity",
+    text: "What struggles for justice, access, and recognition emerge when unequal societies contest land, water, and knowledge systems.",
+  },
+];
+---
+
+<Section
+  id="research"
+  eyebrow="03 / Research themes"
+  title="Exchange, resilience, equity."
+  tone="ink"
+>
+  <p class="section-deck">
+    My work explores the relationships between extraction, community, and change
+    in Latin America's history.
+  </p>
+  <div class="theme-grid">
+    {
+      themes.map((theme) => (
+        <article class="theme-card">
+          <p class="card-number">{theme.number}</p>
+          <h3>{theme.title}</h3>
+          <p>{theme.text}</p>
+        </article>
+      ))
+    }
+  </div>
+  <a class="text-link text-link--light" href="/research/"
+    >View research and publications <span aria-hidden="true">↗</span></a
+  >
+</Section>
