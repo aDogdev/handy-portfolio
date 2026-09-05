@@ -42,20 +42,34 @@ const courses = [
 ---
 
 <Layout>
-  <main class="detail-page">
-    <header class="detail-hero detail-hero--rust">
-      <p class="eyebrow">Teaching & pedagogy</p>
-      <h1>The classroom as a place for connection.</h1>
-      <p class="detail-intro">
+  <main class="bg-paper">
+    <header
+      class="min-h-[76vh] bg-rust px-5 pb-24 pt-48 text-paper sm:px-[8vw] lg:px-36"
+    >
+      <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+        Teaching & pedagogy
+      </p>
+      <h1
+        class="my-8 max-w-[10ch] text-[clamp(4rem,10vw,10rem)] leading-[.88] tracking-[-.05em]"
+      >
+        The classroom as a place for connection.
+      </h1>
+      <p
+        class="m-0 max-w-[26ch] font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight"
+      >
         I connect language, history, and community engagement to help students
         read the world with curiosity and care.
       </p>
     </header>
 
-    <section class="detail-section">
-      <div class="detail-columns">
-        <h2>Learning is an active, intercultural practice.</h2>
-        <div>
+    <section class="px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
+      <div class="mx-auto grid max-w-7xl gap-8 sm:gap-[8vw] md:grid-cols-2">
+        <h2
+          class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
+        >
+          Learning is an active, intercultural practice.
+        </h2>
+        <div class="max-w-[55ch] text-[1.05rem] leading-7">
           <p>
             I have taught different levels of Spanish language, Research in the
             Humanities, and Latin American Studies. My teaching emphasizes
@@ -71,20 +85,26 @@ const courses = [
       </div>
     </section>
 
-    <section class="detail-section detail-section--cream">
-      <p class="eyebrow">Courses taught</p>
-      <div class="course-list">
+    <section class="bg-cream px-5 py-20 sm:px-[8vw] sm:py-36 lg:px-36">
+      <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+        Courses taught
+      </p>
+      <div class="mx-auto max-w-7xl">
         {
           courses.map(([code, name, institution, href]) => (
-            <article class="course">
-              <p class="publication-type">{code}</p>
+            <article class="grid items-start gap-2 border-t border-ink/20 py-6 md:grid-cols-[minmax(10rem,1fr)_3fr_auto] md:items-center md:gap-8">
+              <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em]">
+                {code}
+              </p>
               <div>
-                <h2>{name}</h2>
-                <p>{institution}</p>
+                <h2 class="m-0 mb-2 max-w-[28ch] text-[clamp(1.8rem,3vw,3.2rem)] leading-none">
+                  {name}
+                </h2>
+                <p class="m-0 leading-relaxed">{institution}</p>
               </div>
               {href && (
                 <a
-                  class="text-link"
+                  class="inline-flex w-fit gap-4 whitespace-nowrap border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
                   href={href}
                   target="_blank"
                   rel="noreferrer"
@@ -98,10 +118,16 @@ const courses = [
       </div>
     </section>
 
-    <section class="detail-section detail-section--rust">
-      <div class="detail-columns">
-        <h2>Teaching with the wider world in view.</h2>
-        <p>
+    <section
+      class="bg-rust px-5 py-20 text-paper sm:px-[8vw] sm:py-36 lg:px-36"
+    >
+      <div class="mx-auto grid max-w-7xl gap-8 sm:gap-[8vw] md:grid-cols-2">
+        <h2
+          class="m-0 max-w-[10ch] text-[clamp(2.5rem,5vw,5rem)] leading-[.95]"
+        >
+          Teaching with the wider world in view.
+        </h2>
+        <p class="max-w-[55ch] text-[1.05rem] leading-7">
           Open educational resources, service-learning, and student research
           create routes between academic knowledge and the communities that give
           it meaning.

@@ -26,22 +26,28 @@ const themes = [
   title="Exchange, resilience, equity."
   tone="ink"
 >
-  <p class="section-deck">
+  <p
+    class="mb-16 mt-[-1.5rem] max-w-[27ch] font-display text-[clamp(1.4rem,2.5vw,2rem)]"
+  >
     My work explores the relationships between extraction, community, and change
     in Latin America's history.
   </p>
-  <div class="theme-grid">
+  <div class="mb-16 grid grid-cols-1 border-t border-paper/35 md:grid-cols-3">
     {
       themes.map((theme) => (
-        <article class="theme-card">
-          <p class="card-number">{theme.number}</p>
-          <h3>{theme.title}</h3>
-          <p>{theme.text}</p>
+        <article class="min-h-0 border-b border-paper/35 py-6 md:min-h-80 md:border-b-0 md:border-r md:pr-8 md:[&:nth-child(2)]:pl-8 md:[&:nth-child(3)]:border-r-0 md:[&:nth-child(3)]:pl-8">
+          <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+            {theme.number}
+          </p>
+          <h3 class="mb-6 mt-8 text-[clamp(2.5rem,5vw,5rem)]">{theme.title}</h3>
+          <p class="max-w-[30ch] leading-relaxed">{theme.text}</p>
         </article>
       ))
     }
   </div>
-  <a class="text-link text-link--light" href="/research/"
+  <a
+    class="inline-flex gap-4 border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
+    href="/research/"
     >View research and publications <span aria-hidden="true">↗</span></a
   >
 </Section>

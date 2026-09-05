@@ -37,24 +37,42 @@ const labels = isSpanish
     <title>Handy Acosta Cuellar, Ph.D.</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="wordmark" href={labels.home}>HAC<span>.</span></a>
-      <nav aria-label="Main navigation">
-        <a href={`${labels.home}#about`}>{labels.about}</a>
-        <a href={`${labels.home}#research`}>{labels.research}</a>
-        <a href={`${labels.home}#teaching`}>{labels.teaching}</a>
-        <a href={`${labels.home}#contact`}>{labels.contact}</a>
+    <header
+      class="absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-4 px-5 py-6 sm:gap-8 sm:px-[5vw] lg:px-20"
+    >
+      <a class="font-bold tracking-[.04em] no-underline" href={labels.home}
+        >HAC<span class="text-coral">.</span></a
+      >
+      <nav class="flex gap-3 sm:gap-8 lg:gap-10" aria-label="Main navigation">
+        <a
+          class="text-[.62rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:text-[.75rem]"
+          href={`${labels.home}#about`}>{labels.about}</a
+        >
+        <a
+          class="text-[.62rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:text-[.75rem]"
+          href={`${labels.home}#research`}>{labels.research}</a
+        >
+        <a
+          class="text-[.62rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:text-[.75rem]"
+          href={`${labels.home}#teaching`}>{labels.teaching}</a
+        >
+        <a
+          class="text-[.62rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:text-[.75rem]"
+          href={`${labels.home}#contact`}>{labels.contact}</a
+        >
       </nav>
       <a
-        class="language-switch"
+        class="hidden border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.1em] no-underline hover:text-coral sm:block"
         href={isSpanish ? "/" : "/es/"}
         lang={isSpanish ? "en" : "es"}>{labels.switch}</a
       >
     </header>
     <slot />
-    <footer class="site-footer">
+    <footer
+      class="flex justify-between gap-4 px-5 py-6 text-[.75rem] uppercase tracking-[.08em] sm:px-[5vw] lg:px-20"
+    >
       <span>Handy Acosta Cuellar, Ph.D.</span>
-      <a href="#top">Back to top ↑</a>
+      <a class="no-underline" href="#top">Back to top ↑</a>
     </footer>
   </body>
 </html>

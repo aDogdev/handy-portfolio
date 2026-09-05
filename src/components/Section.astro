@@ -2,10 +2,30 @@
 const { eyebrow, title, id = undefined, tone = "light" } = Astro.props;
 ---
 
-<section class:list={["site-section", `site-section--${tone}`]} id={id}>
-  <div class="section-inner">
-    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-    {title && <h2>{title}</h2>}
+<section
+  class:list={[
+    "px-5 py-20 sm:px-[8vw] sm:py-32 lg:px-36 lg:py-40",
+    tone === "cream" && "bg-cream",
+    tone === "ink" && "bg-ink text-paper",
+    tone === "rust" && "bg-rust text-paper",
+  ]}
+  id={id}
+>
+  <div class="mx-auto max-w-7xl">
+    {
+      eyebrow && (
+        <p class="mb-6 text-[.7rem] font-bold uppercase tracking-[.12em]">
+          {eyebrow}
+        </p>
+      )
+    }
+    {
+      title && (
+        <h2 class="mb-12 max-w-[10ch] text-[clamp(3rem,7vw,7rem)] leading-[.92] tracking-[-.04em]">
+          {title}
+        </h2>
+      )
+    }
     <slot />
   </div>
 </section>

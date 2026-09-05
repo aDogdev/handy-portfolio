@@ -8,12 +8,14 @@ import Section from "../Section.astro";
   title="Learning as shared inquiry."
   tone="rust"
 >
-  <div class="teaching-grid">
-    <p class="lead">
+  <div class="grid gap-8 sm:gap-[8vw] md:grid-cols-2">
+    <p
+      class="m-0 max-w-[16ch] font-display text-[clamp(1.8rem,3vw,3rem)] leading-tight"
+    >
       I teach Spanish language, Research in the Humanities, and Latin American
       Studies.
     </p>
-    <div>
+    <div class="max-w-[58ch] text-[1.05rem] leading-7">
       <p>
         My teaching emphasizes intercultural competence, critical thinking, and
         community engagement. Through service-learning and public-facing
@@ -21,7 +23,9 @@ import Section from "../Section.astro";
         students to see history as a living dialogue between people, place, and
         possibility.
       </p>
-      <a class="text-link text-link--light" href="/teaching/"
+      <a
+        class="mt-8 inline-flex gap-4 border-b border-current pb-1 text-[.75rem] font-bold uppercase tracking-[.08em] no-underline hover:border-coral hover:text-coral"
+        href="/teaching/"
         >Explore teaching and courses <span aria-hidden="true">↗</span></a
       >
     </div>
